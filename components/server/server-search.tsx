@@ -3,7 +3,7 @@
 import { Search } from "lucide-react";
 import { useEffect, useState } from "react";
 import { CommandDialog, CommandInput } from "../ui/command";
-import { CommandEmpty, CommandGroup, CommandItem, CommandList } from "cmdk";
+import { CommandEmpty, CommandGroup, CommandItem, CommandList } from "@/components/ui/command";
 import { useParams, useRouter } from "next/navigation";
 
 interface ServerSearchPorps {
