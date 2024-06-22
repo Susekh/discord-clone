@@ -10,13 +10,9 @@ import {
 } from "@/components/ui/dialog"
 
 
-import { Input } from "../ui/input";
 import { Button } from "../ui/button";
-import { FileUpload } from "../file-upload";
 import { useRouter } from "next/navigation";
 import { useModal } from "@/hooks/use-modal-store";
-import { Label } from "../ui/label";
-import { Check, Copy, RefreshCw } from "lucide-react";
 import { useState } from "react";
 import axios from "axios";
 
@@ -25,7 +21,7 @@ import axios from "axios";
 
 
 export const LeaveServerModal = () => {
-    const { isOpen, onClose, onOpen, type, data } = useModal();
+    const { isOpen, onClose, type, data } = useModal();
 
     const isModalOpen = isOpen && type === "leaveServer";
     const {server} = data;

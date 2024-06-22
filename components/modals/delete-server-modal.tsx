@@ -10,13 +10,9 @@ import {
 } from "@/components/ui/dialog"
 
 
-import { Input } from "../ui/input";
 import { Button } from "../ui/button";
-import { FileUpload } from "../file-upload";
 import { useRouter } from "next/navigation";
 import { useModal } from "@/hooks/use-modal-store";
-import { Label } from "../ui/label";
-import { Check, Copy, RefreshCw } from "lucide-react";
 import { useState } from "react";
 import axios from "axios";
 
@@ -25,7 +21,7 @@ import axios from "axios";
 
 
 export const DeleteServerModal = () => {
-    const { isOpen, onClose, onOpen, type, data } = useModal();
+    const { isOpen, onClose, type, data } = useModal();
 
     const isModalOpen = isOpen && type === "deleteServer";
     const {server} = data;
@@ -63,7 +59,7 @@ export const DeleteServerModal = () => {
                         Delete Server
                     </DialogTitle>
                     <DialogDescription className=" text-center text-zinc-500">
-                        Are you sure you want to do this? <span className=" font-semibold text-indigo-500 font-semibold">{server?.name}</span> will
+                        Are you sure you want to do this? <span className=" text-indigo-500 font-semibold">{server?.name}</span> will
                         be permanently deleted.
                     </DialogDescription>
                 </DialogHeader>
