@@ -15,6 +15,9 @@ import  {
 
 import { Input } from "../ui/input";
 import { Plus, Smile } from "lucide-react";
+import { useModal } from "@/hooks/use-modal-store";
+import { EmojiPicker } from "../emoji-picker";
+import { useRouter } from "next/navigation";
 
 
 interface ChatInputProps {
@@ -34,6 +37,10 @@ function ChatInput({
     name,
     type
 } : ChatInputProps) {
+
+    const router = useRouter();
+    const {onOpen} = useModal();
+
     const form = useForm<z.infer<typeof formSchema>>({
         resolver : zodResolver(formSchema),
         defaultValues : {
@@ -51,6 +58,9 @@ function ChatInput({
             });
 
             await axios.post(url, values);
+
+            form.reset();
+            router.refresh();
         } catch (error) {
             console.log(error);
         }
@@ -68,7 +78,7 @@ function ChatInput({
                                 <div className=" relative p-4 pb-6">
                                     <button
                                         type="button"
-                                        onClick={() => {}}
+                                        onClick={() => onOpen("messageFile", {apiUrl, query})}
                                         className="absolute top-7 left-8 h-[24px] w-[24px]
                                          bg-zinc-500 dark:bg-zinc-400 hover:bg-zinc-600
                                           dark:hover:bg-zinc-300 transition rounded-full p-1 flex
@@ -86,7 +96,9 @@ function ChatInput({
                                         {...field}
                                     />
                                     <div className="absolute top-7 right-8">
-                                        <Smile />
+                                        <EmojiPicker 
+                                            onChange={(emoji : string) => field.onChange(`${field.value} ${emoji}`)}
+                                        />
                                     </div>
                                 </div>
                             </FormControl>
