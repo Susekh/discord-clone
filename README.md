@@ -27,7 +27,7 @@ Make sure you have the following software installed on your system:
 1. Clone the repo
 
 ```bash
-git clone https://github.com/your-username/discord-clone.git
+git clone https://github.com/Susekh/discord-clone.git
 
 2. Navigate to the project directory
 
