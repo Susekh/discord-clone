@@ -31,14 +31,13 @@ git clone https://github.com/Susekh/discord-clone.git
 
 2. Navigate to the project directory
 
-```bash
 cd discord-clone
 
 3. Install the dependencies
 
-```bash
+
 npm install
 
 4. Running the Application
 
-```npm run dev
+npm run dev
