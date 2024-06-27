@@ -1,9 +1,9 @@
 import { currentProfile } from '@/lib/current-profile'
 import { db } from '@/lib/db';
-import { RedirectToSignIn } from '@clerk/nextjs';
 import { redirect } from 'next/navigation';
 import React from 'react'
 import { ServerSidebar } from '@/components/server/server-sidebar';
+import { auth } from '@clerk/nextjs/server';
 
 async function ServerIdLayout({
     children,
@@ -15,7 +15,7 @@ async function ServerIdLayout({
     const profile = await currentProfile();
 
     if(!profile){
-        return <RedirectToSignIn />;
+        return auth().redirectToSignIn();
     }
 
     const server = await db.server.findUnique({
