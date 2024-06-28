@@ -1,6 +1,6 @@
-# Discord Clone
+# Team Sync
 
-A Discord clone built to learn about various topics such as Next.js, Socket.IO, and best practices. 
+This is a Discord clone built to learn about various topics such as Next.js, Socket.IO, and best practices. 
 
 ## Features
 
