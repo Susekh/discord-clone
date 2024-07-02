@@ -1,4 +1,4 @@
-"use client";
+'use client'
 
 import { Member, MemberRole, Profile } from "@prisma/client";
 import { UserAvatar } from "../ui/user-avatar";
@@ -116,7 +116,7 @@ export const ChatItem = ({
         form.reset({
             content : content,
         });
-    }, [content, isUpdated]);
+    }, [content]);
 
     const fileType = fileUrl?.split(".").pop();
 
