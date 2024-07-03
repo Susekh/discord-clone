@@ -1,4 +1,5 @@
-'use client'
+"use client"
+
 
 import { Member, MemberRole, Profile } from "@prisma/client";
 import { UserAvatar } from "../ui/user-avatar";
@@ -116,7 +117,7 @@ export const ChatItem = ({
         form.reset({
             content : content,
         });
-    }, [content]);
+    }, [content, form]);
 
     const fileType = fileUrl?.split(".").pop();
 
@@ -182,7 +183,7 @@ export const ChatItem = ({
                     )}
                     {!fileUrl && !isEditing && (
                         <p className={cn(
-                            "text-sm text-zinc-300 dark:text-zinc-300",
+                            "text-sm text-zinc-700 dark:text-zinc-300",
                             deleted && "italic text-zinc-500 dark:text-zinc-400 text-xs mt-1"
                         )}>
                             {content}
