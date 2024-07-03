@@ -5,6 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
 import axios from "axios"
+import { UserButton } from "@clerk/nextjs";
 
 import {
     Dialog,
@@ -133,6 +134,17 @@ export const InitialModal = () => {
                             />
                         </div>
                         <DialogFooter className="bg-gray-100 px-6 py-4">
+                                <div className="mr-auto">
+                                    <UserButton 
+                                    afterSignOutUrl="/"
+                                    appearance={{
+                                        elements : {
+                                            avatarBox: "h-[40px] w-[40px]",
+                                            userButtonPopoverCard: { pointerEvents: "initial" },
+                                        }
+                                    }}
+                                />
+                                </div>
                                 <Button variant="primary" disabled={isLoading}>
                                     Create
                                 </Button>
