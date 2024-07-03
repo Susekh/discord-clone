@@ -44,7 +44,7 @@ export const useChatQuery = ({
         refetchOnMount : true,
         refetchOnWindowFocus: true,
         refetchIntervalInBackground : true,
-        refetchInterval : isConnected ? 500 : 1000
+        refetchInterval : 1000
     });
 
     return {
